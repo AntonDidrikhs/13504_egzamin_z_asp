@@ -4,9 +4,9 @@
     {
         public string RoadName { get; set; }
 
-        public int RoadLength { get; set; }
+        public decimal RoadLength { get; set; }
 
-        public int FuelUsed { get; set; }
+        public decimal FuelUsed { get; set; }
 
         public decimal PricePerLiter { get; set; }
 
