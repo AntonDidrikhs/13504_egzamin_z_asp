@@ -1,0 +1,60 @@
+﻿@model IEnumerable<_13504_egzamin_z_asp.Models.Road>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>View</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RoadName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoadLength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FuelUsed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PricePerLiter)
+            </th>
+            <th>
+                Total Fuel Price
+            </th>
+            <th>
+                Fuel Usage per 100KM
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoadName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoadLength)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FuelUsed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PricePerLiter)
+            </td>
+            <td>
+                @(item.PricePerLiter * item.FuelUsed)
+            </td>
+            <td>
+                @(item.FuelUsed / (item.RoadLength / 100))
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

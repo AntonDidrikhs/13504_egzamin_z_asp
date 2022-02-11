@@ -50,7 +50,7 @@ namespace _13504_egzamin_z_asp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Roads}/{action=Create}/{id?}");
             });
         }
     }
